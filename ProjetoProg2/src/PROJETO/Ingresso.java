@@ -48,9 +48,13 @@ abstract class Ingresso {
         this.numeroAssento = numeroAssento;
     }
 
-
-
+    public void mostrarDetalhes() {
+            System.out.println("Preco do ingresso: " + preco);
+            System.out.println("Tipo: "+ tipo);
+    }
    
-   
+    
+            
+  
    
 }

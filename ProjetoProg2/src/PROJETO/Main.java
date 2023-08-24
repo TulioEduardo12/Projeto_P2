@@ -4,28 +4,29 @@
  */
 package PROJETO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Tulio E
  */
 public class Main {
     public static void main(String[] args) {
+        Evento eventoConcerto = new Evento("Concerto de Musica");
+        Evento eventoFeira = new Evento("Feira de Arte");
 
-       // IngressoVIP ingressoVIP = new IngressoVIP("VIP", 100.0, "Acesso à área VIP", "Setor A");
-        IngressoIdoso ingressoIdoso = new IngressoIdoso(60, 100, "idoso", 9);
-        IngressoEstudante ingressoEstudante = new IngressoEstudante("escola", 100, "meia", 10);
+        IngressoEstudante ingressoEstudante = new IngressoEstudante("escola", 2, "estudante", 34);
+        IngressoIdoso ingressoIdoso = new IngressoIdoso(60, 12, "idoso", 23);
 
+        eventoConcerto.adicionarIngresso(ingressoEstudante);
+        eventoFeira.adicionarIngresso(ingressoIdoso);
 
-        System.out.println("Detalhes do Ingresso Idoso:");
-        System.out.println("Tipo: " + ingressoIdoso.getTipo());
-        System.out.println("Preco: $" + ingressoIdoso.getPreco());
-        System.out.println("Idade do idoso: " + ingressoIdoso.getIdade() + " anos");
-        System.out.println();
+        Usuario usuario1 = new Usuario("Joao", "123.456.789-00", "joao@example.com");
+        Usuario usuario2 = new Usuario("Maria", "987.654.321-00", "maria@example.com");
 
-        System.out.println("Detalhes do Ingresso Estudante:");
-        System.out.println("Tipo: " + ingressoEstudante.getTipo());
-        System.out.println("Preco: $" + ingressoEstudante.getPreco());
-        System.out.println("Instituicao: " + ingressoEstudante.getInstituicao());
+        eventoConcerto.venderIngresso(usuario1, ingressoEstudante);
+        eventoFeira.venderIngresso(usuario2, ingressoIdoso);
     }
 }
 

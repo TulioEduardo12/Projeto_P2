@@ -45,6 +45,12 @@ public class IngressoIdoso extends Ingresso{
     }
 
 
-    
+      public void mostrarDetalhes() {
+        super.mostrarDetalhes();
+        System.out.println("Ingresso de idoso");
+        System.out.println("Idade: " + idade + " anos");
+        
+              
+    }  
     
 }

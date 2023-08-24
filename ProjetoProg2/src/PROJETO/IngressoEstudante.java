@@ -44,6 +44,11 @@ public class IngressoEstudante extends Ingresso{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
+       public void mostrarDetalhes() {
+        super.mostrarDetalhes();
+        System.out.println("Ingresso de estudante");
+        System.out.println("Instituicao: " + Instituicao);
+           System.out.println("------------------");
+    } 
     
 }
