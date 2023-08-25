@@ -21,7 +21,8 @@ abstract class Ingresso {
         
     }
 
-   
+    abstract public double calcularTributo(double IBPT);
+    abstract public double fatorProximidade(int fileira);
    
     public double getPreco() {
         return preco;
