@@ -62,5 +62,14 @@ public class IngressoIdoso extends Ingresso{
         
               
     }  
+      
+    @Override
+    public double calcularTributo(double IBPT){
+        return (0.01 * IBPT); //sem imposto pra idoso
+    }
     
+    @Override
+    public double fatorProximidade(int fileira){
+        return ((1 / fileira)* 1.25);
+    }
 }
