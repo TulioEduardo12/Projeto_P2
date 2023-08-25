@@ -6,10 +6,11 @@ package PROJETO;
 
 /**
  *
- * @author Tulio E
+ * @author Tulio E & Matheus D
  */
 public class IngressoIdoso extends Ingresso{
     private int idade;
+    private int numeroCarteiraIdoso;
 
     public IngressoIdoso(int idade, double preco, String tipo, int numeroAssento) {
         super(preco, tipo, numeroAssento);
@@ -44,6 +45,15 @@ public class IngressoIdoso extends Ingresso{
         this.tipo = tipo;
     }
 
+    public int getNumeroCarteiraIdoso() {
+        return numeroCarteiraIdoso;
+    }
+
+    public void setNumeroCarteiraIdoso(int numeroCarteiraIdoso) {
+        this.numeroCarteiraIdoso = numeroCarteiraIdoso;
+    }
+    
+    
 
       public void mostrarDetalhes() {
         super.mostrarDetalhes();
