@@ -51,4 +51,14 @@ public class IngressoEstudante extends Ingresso{
            System.out.println("------------------");
     } 
     
+       @Override
+    public double calcularTributo(double IBPT){
+        return (0.01 * IBPT);
+    }
+    
+    @Override
+    public double fatorProximidade(int fileira){
+        return ((1 / fileira)* 1.25);
+    }
+       
 }
