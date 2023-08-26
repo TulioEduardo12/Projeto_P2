@@ -6,6 +6,7 @@ package PROJETO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -13,6 +14,9 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
+        
+        Scanner scany = new Scanner(System.in);
+        
         Evento eventoConcerto = new Evento("Concerto de Musica");
         Evento eventoFeira = new Evento("Feira de Arte");
 
@@ -27,6 +31,22 @@ public class Main {
 
         eventoConcerto.venderIngresso(usuario1, ingressoEstudante);
         eventoFeira.venderIngresso(usuario2, ingressoIdoso);
+        
+        // começando o menu
+        
+        boolean breakpoint = false;
+        System.out.println("---------------------------------------");
+        System.out.println("Bem vindo ao TicketRural™");
+        String entrada = "";
+         while(breakpoint == false){
+             System.out.println("Por favor escolha [func1] [func2] [func3] ou digite esc para sair");
+             entrada = scany.nextLine();
+             if(entrada.toLowerCase().equals("esc")){
+                 breakpoint = true;
+                 break;
+             }
+             
+         }
     }
 }
 
