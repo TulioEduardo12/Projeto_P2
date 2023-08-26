@@ -32,6 +32,8 @@ public class Main {
         eventoConcerto.venderIngresso(usuario1, ingressoEstudante);
         eventoFeira.venderIngresso(usuario2, ingressoIdoso);
         
+        
+        
         // começando o menu
         
         boolean breakpoint = false;
@@ -41,10 +43,13 @@ public class Main {
          while(breakpoint == false){
              System.out.println("Por favor escolha [func1] [func2] [func3] ou digite esc para sair");
              entrada = scany.nextLine();
-             if(entrada.toLowerCase().equals("esc")){
+             if(entrada.toLowerCase().equals("esc")){ // comando de saida do menu.
                  breakpoint = true;
                  break;
              }
+             if(entrada.toLowerCase().equals("func1")){
+                     System.out.println("jlljlj");
+                 }
              
          }
     }
