@@ -4,9 +4,13 @@
  */
 package PROJETO;
 
+import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 /**
  *
@@ -41,19 +45,102 @@ public class Main {
         System.out.println("Bem vindo ao TicketRural™");
         String entrada = "";
          while(breakpoint == false){
-             System.out.println("Por favor escolha [func1] [func2] [func3] ou digite esc para sair");
+             /**
+              * fazer o crud no menu e as funçoes
+              * Criar OK
+              * Ler
+              * Editar
+              * Apagar
+              */
+             System.out.println("Por favor escolha [Criar] [func2] [func3] ou digite esc para sair");
              entrada = scany.nextLine();
              if(entrada.toLowerCase().equals("esc")){ // comando de saida do menu.
                  breakpoint = true;
                  break;
              }
-             if(entrada.toLowerCase().equals("func1")){
-                     System.out.println("jlljlj");
+             if(entrada.toLowerCase().equals("criar")){
+                    criar();
+                    
                  }
              
          }
+         
+
+         
     }
+    //funçao de criar do crud
+        public static void criar(){
+    
+        Scanner scany = new Scanner(System.in);
+        System.out.println("Criando evento");
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("nome evento");
+        String nome_evento = scany.nextLine();
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("tipo evento");
+        String tipo_evento = scany.nextLine();  
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("data evento");
+        String data_evento = scany.nextLine();
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("preco evento");
+        String preco_evento = scany.nextLine();
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("preco da meia evento");
+        String preco_meia_evento = scany.nextLine();
+        
+            System.out.println("--------------------------------------");
+            
+        System.out.println("quantidade de vagas evento");
+        String quantidade_evento = scany.nextLine();
+        
+            System.out.println("--------------------------------------");
+               System.out.println("Evento: " + nome_evento + " Tipo: " + tipo_evento + " Data: " + data_evento +
+                           " Preco: " + preco_evento + " Preco da Meia: " + preco_meia_evento + 
+                           " Quantidade: " + quantidade_evento);
+               
+               
+               
+
+        
+        }
+        
+
+            
+            
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+ 
+        
+        
 }
+        
+        
+
 
 
     
