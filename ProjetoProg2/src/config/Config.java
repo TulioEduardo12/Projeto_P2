@@ -7,11 +7,11 @@ import java.sql.DriverManager;
  *
  * @author Matheus Dino
  */
-public class Config {
+public class Config { //pegamos o código padrão da internet para conectar ao SQLite
     
     Connection conec = null;
     
-    public static Connection conectarBD(){
+    public static Connection conectarBD(){ // metodo estático para conectar ao banco de dados. 
         try{
             Class.forName("org.sqlite.JDBC");
             Connection conec = DriverManager.getConnection("jdbc:sqlite:bdRuralTicket.sqlite");
