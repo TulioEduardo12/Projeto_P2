@@ -6,7 +6,6 @@ package PROJETO;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  *
@@ -35,6 +34,8 @@ class Evento {
             System.out.println("Ingresso não disponível para o evento " + nome);
         }
     }
+    
+    
 
     
 }
