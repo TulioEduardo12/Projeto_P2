@@ -34,7 +34,9 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="ClearButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="usuariosInfoButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="207" max="32767" attributes="0"/>
                               <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -53,7 +55,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -81,6 +83,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="SaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="usuariosInfoButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="9" max="32767" attributes="0"/>
           </Group>
@@ -141,6 +144,14 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ClearButtonMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="usuariosInfoButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Usuarios..."/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usuariosInfoButtonMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>
