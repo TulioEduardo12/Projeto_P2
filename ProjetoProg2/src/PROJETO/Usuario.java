@@ -56,7 +56,7 @@ class Usuario {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() {  //adicionamos o hashcode, que é um mecanismo de busca que pode vir ajudar.
         int hash = 7;
         hash = 41 * hash + Objects.hashCode(this.nome);
         hash = 41 * hash + Objects.hashCode(this.cpf);
