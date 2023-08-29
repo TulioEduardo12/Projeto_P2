@@ -41,6 +41,7 @@ public class cadastroForm extends javax.swing.JFrame {
         SaveButton = new javax.swing.JButton();
         ClearButton = new javax.swing.JButton();
         usuariosInfoButton = new javax.swing.JButton();
+        entrarEmBuscaButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +83,13 @@ public class cadastroForm extends javax.swing.JFrame {
             }
         });
 
+        entrarEmBuscaButton.setText("Buscar...");
+        entrarEmBuscaButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                entrarEmBuscaButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,7 +106,9 @@ public class cadastroForm extends javax.swing.JFrame {
                                 .addComponent(ClearButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(usuariosInfoButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(entrarEmBuscaButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                                 .addComponent(SaveButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +120,7 @@ public class cadastroForm extends javax.swing.JFrame {
                                     .addComponent(entryNome, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                                     .addComponent(entryCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(entryEmail))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +143,8 @@ public class cadastroForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveButton)
                     .addComponent(ClearButton)
-                    .addComponent(usuariosInfoButton))
+                    .addComponent(usuariosInfoButton)
+                    .addComponent(entrarEmBuscaButton))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
@@ -160,6 +171,12 @@ public class cadastroForm extends javax.swing.JFrame {
         infoGerais.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_usuariosInfoButtonMouseClicked
+
+    private void entrarEmBuscaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarEmBuscaButtonMouseClicked
+        buscaInfoForm buscaInfo = new buscaInfoForm();
+        buscaInfo.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_entrarEmBuscaButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -219,6 +236,7 @@ public class cadastroForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ClearButton;
     private javax.swing.JButton SaveButton;
+    private javax.swing.JButton entrarEmBuscaButton;
     private javax.swing.JTextField entryCPF;
     private javax.swing.JTextField entryEmail;
     private javax.swing.JTextField entryNome;
