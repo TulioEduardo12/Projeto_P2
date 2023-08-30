@@ -15,6 +15,7 @@ public class cadastroForm extends javax.swing.JFrame {
     Connection conec = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    String entryDelete = "";
     
     public cadastroForm() {
         initComponents();
@@ -42,11 +43,13 @@ public class cadastroForm extends javax.swing.JFrame {
         ClearButton = new javax.swing.JButton();
         usuariosInfoButton = new javax.swing.JButton();
         entrarEmBuscaButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
-        jLabel1.setText("Cadastro");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Gerenciamento de Usuário");
 
         jLabel2.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         jLabel2.setText("Nome:");
@@ -90,37 +93,43 @@ public class cadastroForm extends javax.swing.JFrame {
             }
         });
 
+        deleteButton.setText("Apagar...");
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(jLabel1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(entryNome, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                            .addComponent(entryCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(entryEmail)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ClearButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(usuariosInfoButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(entrarEmBuscaButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                                .addComponent(SaveButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(entryNome, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                                    .addComponent(entryCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(entryEmail))))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(ClearButton)
+                        .addGap(25, 25, 25)
+                        .addComponent(usuariosInfoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(entrarEmBuscaButton)
+                        .addGap(37, 37, 37)
+                        .addComponent(deleteButton)
+                        .addGap(26, 26, 26)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(SaveButton)
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +153,8 @@ public class cadastroForm extends javax.swing.JFrame {
                     .addComponent(SaveButton)
                     .addComponent(ClearButton)
                     .addComponent(usuariosInfoButton)
-                    .addComponent(entrarEmBuscaButton))
+                    .addComponent(entrarEmBuscaButton)
+                    .addComponent(deleteButton))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
@@ -177,6 +187,11 @@ public class cadastroForm extends javax.swing.JFrame {
         buscaInfo.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_entrarEmBuscaButtonMouseClicked
+
+    private void deleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseClicked
+        String entryDelete = JOptionPane.showInputDialog(null, "Por favor, insira o CPF do usuário que deseja deletar.", "Alerta!", JOptionPane.INFORMATION_MESSAGE);
+        deletarUsuario(entryDelete);
+    }//GEN-LAST:event_deleteButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,10 +247,26 @@ public class cadastroForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-
+    
+    public void deletarUsuario(String d){
+        try{
+            String deletar = "DELETE FROM Usuarios WHERE cpf = ? ";
+            pst = conec.prepareStatement(deletar);
+            pst.setString(1, d);
+            pst.execute();
+            
+            JOptionPane.showMessageDialog(null, "Usuário deletado permanentememte!");
+        
+            } catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+            }
+    }
+        
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ClearButton;
     private javax.swing.JButton SaveButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JButton entrarEmBuscaButton;
     private javax.swing.JTextField entryCPF;
     private javax.swing.JTextField entryEmail;

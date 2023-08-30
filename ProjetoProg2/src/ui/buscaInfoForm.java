@@ -232,6 +232,7 @@ public class buscaInfoForm extends javax.swing.JFrame {
         showName.setText("");
         showCPF.setText("");
         showEmail.setText("");
+        entryAtributo.setText("");
     }//GEN-LAST:event_clearInfoMostradaButtonMouseClicked
 
     private void botaoVoltarInfosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarInfosActionPerformed
@@ -397,6 +398,9 @@ public class buscaInfoForm extends javax.swing.JFrame {
             }
         }
     }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> CaixaDeAtributos;
     private javax.swing.JButton botaoVoltarInfos;
