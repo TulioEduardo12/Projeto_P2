@@ -44,6 +44,9 @@ public class buscaInfoForm extends javax.swing.JFrame {
         clearInfoMostradaButton = new javax.swing.JButton();
         entryAtributo = new javax.swing.JTextField();
         buscaPorAlgoButton = new javax.swing.JButton();
+        updateNameButton = new javax.swing.JButton();
+        updateCPFbutton = new javax.swing.JButton();
+        updateEmailButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +84,11 @@ public class buscaInfoForm extends javax.swing.JFrame {
                 botaoVoltarInfosMouseClicked(evt);
             }
         });
+        botaoVoltarInfos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarInfosActionPerformed(evt);
+            }
+        });
 
         clearInfoMostradaButton.setText("Limpar");
         clearInfoMostradaButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,12 +111,41 @@ public class buscaInfoForm extends javax.swing.JFrame {
             }
         });
 
+        updateNameButton.setText("Atualizar");
+        updateNameButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateNameButtonMouseClicked(evt);
+            }
+        });
+        updateNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateNameButtonActionPerformed(evt);
+            }
+        });
+
+        updateCPFbutton.setText("Atualizar");
+        updateCPFbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateCPFbuttonMouseClicked(evt);
+            }
+        });
+
+        updateEmailButton.setText("Atualizar");
+        updateEmailButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateEmailButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -125,11 +162,13 @@ public class buscaInfoForm extends javax.swing.JFrame {
                                 .addGap(31, 31, 31)
                                 .addComponent(clearInfoMostradaButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buscaPorAlgoButton))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel1)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                                .addComponent(buscaPorAlgoButton)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(updateNameButton)
+                            .addComponent(updateCPFbutton)
+                            .addComponent(updateEmailButton))))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,17 +180,23 @@ public class buscaInfoForm extends javax.swing.JFrame {
                     .addComponent(entryAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CaixaDeAtributos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addComponent(showName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateNameButton))
                 .addGap(18, 18, 18)
-                .addComponent(showCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateCPFbutton))
                 .addGap(18, 18, 18)
-                .addComponent(showEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmailButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltarInfos)
                     .addComponent(clearInfoMostradaButton)
                     .addComponent(buscaPorAlgoButton))
-                .addGap(46, 46, 46))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -188,6 +233,26 @@ public class buscaInfoForm extends javax.swing.JFrame {
         showCPF.setText("");
         showEmail.setText("");
     }//GEN-LAST:event_clearInfoMostradaButtonMouseClicked
+
+    private void botaoVoltarInfosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarInfosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVoltarInfosActionPerformed
+
+    private void updateNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateNameButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateNameButtonActionPerformed
+
+    private void updateNameButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateNameButtonMouseClicked
+        atualizarUsuario("nome");
+    }//GEN-LAST:event_updateNameButtonMouseClicked
+
+    private void updateCPFbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateCPFbuttonMouseClicked
+        atualizarUsuario("cpf");
+    }//GEN-LAST:event_updateCPFbuttonMouseClicked
+
+    private void updateEmailButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateEmailButtonMouseClicked
+        atualizarUsuario("email");
+    }//GEN-LAST:event_updateEmailButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -226,7 +291,7 @@ public class buscaInfoForm extends javax.swing.JFrame {
     
     public class visualizadorUsuario {
         public ResultSet buscaPorAlgo(String s){
-            System.out.println(CaixaDeAtributos);
+            
             try{
                 if(CaixaDeAtributos.getSelectedItem().toString().toLowerCase().equals("nome")){
                     String buscaInfo = "SELECT * FROM Usuarios WHERE nomes = ?";
@@ -252,6 +317,7 @@ public class buscaInfoForm extends javax.swing.JFrame {
             }
             return rs;
         }
+        
 }
     public void fetchUsuarioPorAlgo(){
         visualizadorUsuario vizuario = new visualizadorUsuario();
@@ -267,11 +333,70 @@ public class buscaInfoForm extends javax.swing.JFrame {
                 showEmail.setText(rs.getString("email"));
                 
             }
+            
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    public void atualizarUsuario(String sel){
+        
+        String tempRef = "";
+                
+        if(CaixaDeAtributos.getSelectedItem().equals("Nome")){
+            tempRef = "nomes";
+        }
+        if(CaixaDeAtributos.getSelectedItem().equals("CPF")){
+            tempRef = "cpf";
+        }
+        if(CaixaDeAtributos.getSelectedItem().equals("E-mail")){
+            tempRef = "email";
+        }
+        
+        
+        if(sel.toLowerCase().equals("nome")){
+            try{
+                String atualizar = "UPDATE Usuarios SET nomes = '" + showName.getText() + "' WHERE " + tempRef + " = '" + entryAtributo.getText() + "'";
+                System.out.println(atualizar);
+                
+                pst = conec.prepareStatement(atualizar);
+                pst.execute();
+                
+                JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        if(sel.toLowerCase().equals("cpf")){
+            try{
+                String atualizar = "UPDATE Usuarios SET cpf = '" + showCPF.getText() + "' WHERE " + tempRef + " = '" + entryAtributo.getText() + "'";
+                System.out.println(atualizar);
+                
+                pst = conec.prepareStatement(atualizar);
+                pst.execute();
+                
+                JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        if(sel.toLowerCase().equals("email")){
+            try{
+                String atualizar = "UPDATE Usuarios SET email = '" + showEmail.getText() + "' WHERE " + tempRef + " = '" + entryAtributo.getText() + "'";
+                System.out.println(atualizar);
 
+                pst = conec.prepareStatement(atualizar);
+                pst.execute();
+                
+                JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> CaixaDeAtributos;
     private javax.swing.JButton botaoVoltarInfos;
@@ -282,5 +407,8 @@ public class buscaInfoForm extends javax.swing.JFrame {
     private javax.swing.JTextField showCPF;
     private javax.swing.JTextField showEmail;
     private javax.swing.JTextField showName;
+    private javax.swing.JButton updateCPFbutton;
+    private javax.swing.JButton updateEmailButton;
+    private javax.swing.JButton updateNameButton;
     // End of variables declaration//GEN-END:variables
 }
