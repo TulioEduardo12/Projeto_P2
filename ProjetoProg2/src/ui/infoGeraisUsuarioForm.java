@@ -99,7 +99,7 @@ public class infoGeraisUsuarioForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void infoUsuarioVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoUsuarioVoltarMouseClicked
-        cadastroForm cadas = new cadastroForm();
+        usuarioCadastroForm cadas = new usuarioCadastroForm();
         cadas.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_infoUsuarioVoltarMouseClicked
