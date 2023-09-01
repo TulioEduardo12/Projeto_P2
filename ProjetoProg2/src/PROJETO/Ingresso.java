@@ -12,6 +12,7 @@ abstract class Ingresso {
    double preco;
    String tipo;
    private int numeroAssento;
+   private String nomeEvento;
    
 
     public Ingresso(double preco, String tipo, int numeroAssento) {
@@ -53,7 +54,21 @@ abstract class Ingresso {
             System.out.println("Preco do ingresso: " + preco);
             System.out.println("Tipo: "+ tipo);
     }
-   
+
+    public String getNomeEvento() {
+        return nomeEvento;
+    }
+
+    public void setNomeEvento(String nomeEvento) {
+        this.nomeEvento = nomeEvento;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingresso{" + "preco=" + preco + ", tipo=" + tipo + ", numeroAssento=" + numeroAssento + ", nomeEvento=" + nomeEvento + '}';
+    }
+    
+    
     
             
   

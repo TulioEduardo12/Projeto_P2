@@ -44,6 +44,9 @@ public class buscaIngressoForm extends javax.swing.JFrame {
         updateInstituicaoButton = new javax.swing.JButton();
         updateCarteiraButton = new javax.swing.JButton();
         boxTipo = new javax.swing.JComboBox<>();
+        showNomeDoEvento = new javax.swing.JTextField();
+        updateNomeDoEvento = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -158,6 +161,23 @@ public class buscaIngressoForm extends javax.swing.JFrame {
         boxTipo.setFont(new java.awt.Font("Unispace", 0, 10)); // NOI18N
         boxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inteira", "Meia" }));
 
+        showNomeDoEvento.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        showNomeDoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showNomeDoEventoActionPerformed(evt);
+            }
+        });
+
+        updateNomeDoEvento.setText("Atualizar");
+        updateNomeDoEvento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateNomeDoEventoMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/JoaoGomes.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,24 +185,21 @@ public class buscaIngressoForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(botaoVoltarInfos)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                                     .addComponent(boxAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(entryAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(botaoVoltarInfos))
+                                    .addComponent(entryAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(showInstituicao, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                                     .addComponent(updateInstituicaoButton))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(191, 191, 191)
+                                .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(boxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(showPreco)
@@ -204,8 +221,16 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                                             .addGap(77, 77, 77)))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(buscaPorAlgoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(updateCarteiraButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addContainerGap(56, Short.MAX_VALUE))
+                                        .addComponent(updateCarteiraButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(updateNomeDoEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(showNomeDoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,27 +241,36 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(entryAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxAtributo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updatePrecoButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updateTipoButton)
-                    .addComponent(boxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showNumAssento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateNumAssento))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(showPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updatePrecoButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(updateTipoButton)
+                            .addComponent(boxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(showNumAssento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateNumAssento)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showInstituicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateInstituicaoButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showCarteiraIdoso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateCarteiraButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showNomeDoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateNomeDoEvento))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buscaPorAlgoButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -314,6 +348,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
         atualizarIngresso("carteiraIdoso");
     }//GEN-LAST:event_updateCarteiraButtonMouseClicked
 
+    private void showNomeDoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showNomeDoEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showNomeDoEventoActionPerformed
+
+    private void updateNomeDoEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateNomeDoEventoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateNomeDoEventoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -382,6 +424,12 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                     pst.setString(1, s);
                     rs = pst.executeQuery();
                 }
+                if(boxAtributo.getSelectedItem().toString().equals("Nome do Evento")){
+                    String buscaInfo = "SELECT * FROM Ingressos WHERE nomeDoEvento = ?";
+                    pst = conec.prepareStatement(buscaInfo);
+                    pst.setString(1, s);
+                    rs = pst.executeQuery();
+                }
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
@@ -404,6 +452,7 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 boxTipo.setSelectedItem(rs.getString("tipo"));
                 showInstituicao.setText(rs.getString("instituicaoMeia"));
                 showCarteiraIdoso.setText(rs.getString("numCarteiraIdoso"));
+                showNomeDoEvento.setText(rs.getString("nomeDoEvento"));
             }
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -427,6 +476,9 @@ public class buscaIngressoForm extends javax.swing.JFrame {
         }
         if(boxAtributo.getSelectedItem().equals("Carteira Idoso")){
             tempRef = "numCarteiraIdoso";
+        }
+        if(boxAtributo.getSelectedItem().equals("Nome do Evento")){
+            tempRef = "nomeDoEvento";
         }
         
         if(sel.toLowerCase().equals("preco")){
@@ -504,6 +556,20 @@ public class buscaIngressoForm extends javax.swing.JFrame {
             }
         }
         
+        if(sel.toLowerCase().equals("nomedoevento")){
+            try{
+                String atualizar = "UPDATE Ingressos SET nomeDoEvento = '" + showNomeDoEvento.getText() + "' WHERE " + tempRef + " = '" + entryAtributo.getText() + "'";
+                System.out.println(atualizar);
+                
+                pst = conec.prepareStatement(atualizar);
+                pst.execute();
+                
+                JOptionPane.showMessageDialog(null, "Ingresso atualizado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -514,12 +580,15 @@ public class buscaIngressoForm extends javax.swing.JFrame {
     private javax.swing.JButton clearInfoMostradaButton;
     public javax.swing.JTextField entryAtributo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField showCarteiraIdoso;
     private javax.swing.JTextField showInstituicao;
+    private javax.swing.JTextField showNomeDoEvento;
     private javax.swing.JTextField showNumAssento;
     private javax.swing.JTextField showPreco;
     private javax.swing.JButton updateCarteiraButton;
     private javax.swing.JButton updateInstituicaoButton;
+    private javax.swing.JButton updateNomeDoEvento;
     private javax.swing.JButton updateNumAssento;
     private javax.swing.JButton updatePrecoButton;
     private javax.swing.JButton updateTipoButton;

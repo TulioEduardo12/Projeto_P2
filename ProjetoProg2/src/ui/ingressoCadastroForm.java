@@ -44,6 +44,8 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
         changeButton = new javax.swing.JButton();
         deleteIngresso = new javax.swing.JButton();
         testbutton7 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        entryNomeDoEvento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +138,16 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        jLabel7.setText("Nome do Evento");
+
+        entryNomeDoEvento.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        entryNomeDoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entryNomeDoEventoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,27 +164,34 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(saveButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(entryInstituicaoMeia)
-                            .addComponent(entryCarteiraIdoso, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(entryNumAssento, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(entryPreco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(testbutton7))
-                            .addComponent(entryTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(27, 27, 27)))
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(33, 33, 33)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(entryNomeDoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(entryInstituicaoMeia)
+                                .addComponent(entryCarteiraIdoso, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(entryNumAssento, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(entryPreco, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(testbutton7))
+                                .addComponent(entryTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -203,11 +222,15 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(entryNomeDoEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
                     .addComponent(cleanButton)
                     .addComponent(changeButton)
                     .addComponent(deleteIngresso))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -261,6 +284,10 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
         deletarIngresso(JOptionPane.showInputDialog(null, "Insira o código [ID] do ingresso.", "Alerta!", JOptionPane.INFORMATION_MESSAGE));
     }//GEN-LAST:event_deleteIngressoMouseClicked
 
+    private void entryNomeDoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entryNomeDoEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entryNomeDoEventoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -298,7 +325,7 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
     
     public void cadastrarIngresso(){
         try{
-            String cadastrar = "INSERT INTO Ingressos (preco, tipo, numeroAssento, instituicaoMeia, numCarteiraIdoso) VALUES (?,?,?,?,?)";
+            String cadastrar = "INSERT INTO Ingressos (preco, tipo, numeroAssento, instituicaoMeia, numCarteiraIdoso, nomeDoEvento) VALUES (?,?,?,?,?,?)";
 
             pst = conec.prepareStatement(cadastrar);
 
@@ -316,6 +343,7 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
             } else{
                 pst.setString(5, "N/A");
             }
+            pst.setString(6, entryNomeDoEvento.getText());
      
             if(entryTipo.getSelectedItem().toString().equals("Meia") && (entryCarteiraIdoso.getText().equals("") && entryInstituicaoMeia.getText().equals(""))){
                 throw new Exception("Se o ingresso for do tipo meia, é necessário uma Instituição ou número da Carteira de Idoso.");
@@ -351,6 +379,7 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
     private javax.swing.JButton deleteIngresso;
     private javax.swing.JTextField entryCarteiraIdoso;
     private javax.swing.JTextField entryInstituicaoMeia;
+    private javax.swing.JTextField entryNomeDoEvento;
     private javax.swing.JTextField entryNumAssento;
     private javax.swing.JTextField entryPreco;
     private javax.swing.JComboBox<String> entryTipo;
@@ -360,6 +389,7 @@ public class ingressoCadastroForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton testbutton7;
     // End of variables declaration//GEN-END:variables
