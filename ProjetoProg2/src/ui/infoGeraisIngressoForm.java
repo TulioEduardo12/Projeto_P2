@@ -152,7 +152,14 @@ public class infoGeraisIngressoForm extends javax.swing.JFrame {
                 IngressosTable.setModel(DbUtils.resultSetToTableModel(rs));
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
     // Variables declaration - do not modify//GEN-BEGIN:variables

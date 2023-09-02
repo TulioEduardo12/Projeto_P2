@@ -279,7 +279,14 @@ public class eventoCadastroForm extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void deletarEvento(String d){
@@ -293,7 +300,14 @@ public class eventoCadastroForm extends javax.swing.JFrame {
         
             } catch(Exception e){
         JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     

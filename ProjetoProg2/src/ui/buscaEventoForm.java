@@ -330,7 +330,7 @@ public class buscaEventoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } 
             return rs;
         }
         
@@ -352,7 +352,14 @@ public class buscaEventoForm extends javax.swing.JFrame {
             
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void atualizarEvento(String sel){
@@ -382,7 +389,14 @@ public class buscaEventoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         if(sel.toLowerCase().equals("disponibilidade")){
             try{
@@ -396,7 +410,14 @@ public class buscaEventoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         if(sel.toLowerCase().equals("preço base")){
             try{
@@ -410,7 +431,14 @@ public class buscaEventoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
     }
     

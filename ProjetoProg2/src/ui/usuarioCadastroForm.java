@@ -247,7 +247,14 @@ public class usuarioCadastroForm extends javax.swing.JFrame {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void deletarUsuario(String d){
@@ -261,7 +268,14 @@ public class usuarioCadastroForm extends javax.swing.JFrame {
         
             } catch(Exception e){
         JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
         
     //até aqui

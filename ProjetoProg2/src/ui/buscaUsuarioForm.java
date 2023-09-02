@@ -312,7 +312,7 @@ public class buscaUsuarioForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } 
             return rs;
         }
         
@@ -334,7 +334,14 @@ public class buscaUsuarioForm extends javax.swing.JFrame {
             
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void atualizarUsuario(String sel){
@@ -364,7 +371,14 @@ public class buscaUsuarioForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         if(sel.toLowerCase().equals("cpf")){
             try{
@@ -378,7 +392,14 @@ public class buscaUsuarioForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         if(sel.toLowerCase().equals("email")){
             try{
@@ -392,7 +413,14 @@ public class buscaUsuarioForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
     }
     

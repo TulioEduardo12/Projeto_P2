@@ -160,11 +160,18 @@ public class MenuLogin extends javax.swing.JFrame {
                 
             } else{
                 JOptionPane.showMessageDialog(null, "Senha Invalida");
-            }
+            } 
             
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void fetchLogin(){
@@ -185,7 +192,14 @@ public class MenuLogin extends javax.swing.JFrame {
             
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     

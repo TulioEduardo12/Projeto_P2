@@ -433,7 +433,7 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } 
             return rs;
         }
     }
@@ -456,7 +456,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
             }
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
+        } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
     }
     
     public void atualizarIngresso(String sel){
@@ -493,7 +500,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
         if(sel.toLowerCase().equals("numassento")){
@@ -508,7 +522,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
         if(sel.toLowerCase().equals("tipo")){
@@ -523,7 +544,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
         if(sel.toLowerCase().equals("instituicaomeia")){
@@ -538,7 +566,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
         if(sel.toLowerCase().equals("carteiraidoso")){
@@ -553,7 +588,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
         
         if(sel.toLowerCase().equals("nomedoevento")){
@@ -568,7 +610,14 @@ public class buscaIngressoForm extends javax.swing.JFrame {
                 
             } catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
-            }
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
         }
     }
     
