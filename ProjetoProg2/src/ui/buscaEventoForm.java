@@ -45,6 +45,11 @@ public class buscaEventoForm extends javax.swing.JFrame {
 
         boxAtributo.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         boxAtributo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome do Evento", "Disponibilidade", "Preço Base" }));
+        boxAtributo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                boxAtributoPropertyChange(evt);
+            }
+        });
 
         entryAtribute.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         entryAtribute.addActionListener(new java.awt.event.ActionListener() {
@@ -268,6 +273,10 @@ public class buscaEventoForm extends javax.swing.JFrame {
     private void eventoSaveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventoSaveButtonMouseClicked
         fetchEventoPorAlgo();
     }//GEN-LAST:event_eventoSaveButtonMouseClicked
+
+    private void boxAtributoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_boxAtributoPropertyChange
+      
+    }//GEN-LAST:event_boxAtributoPropertyChange
 
     /**
      * @param args the command line arguments
