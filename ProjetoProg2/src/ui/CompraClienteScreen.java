@@ -234,7 +234,8 @@ public class CompraClienteScreen extends javax.swing.JFrame {
     
     
     public class vizuCompraIngressos{
-        public ResultSet mostreDadosIngressos(String s){
+       
+            public ResultSet mostreDadosIngressos(String s){
             try{
                     
                     String sql = "SELECT * FROM Eventos WHERE nomeEvento = ?";
@@ -248,6 +249,8 @@ public class CompraClienteScreen extends javax.swing.JFrame {
             }
             return rs;
         }
+        
+        
     }
     
     public void fetchAoMudarBox(){ // para quando troca alguma opção na Box

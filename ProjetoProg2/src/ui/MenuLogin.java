@@ -33,7 +33,6 @@ public class MenuLogin extends javax.swing.JFrame {
         EntryUsuario = new javax.swing.JTextField();
         EntrySenha = new javax.swing.JTextField();
         LoginButton = new javax.swing.JButton();
-        AddUserCoringa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,13 +50,6 @@ public class MenuLogin extends javax.swing.JFrame {
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
-            }
-        });
-
-        AddUserCoringa.setText("Corringa");
-        AddUserCoringa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddUserCoringaMouseClicked(evt);
             }
         });
 
@@ -83,9 +75,7 @@ public class MenuLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(171, 171, 171)
                 .addComponent(LoginButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AddUserCoringa)
-                .addGap(31, 31, 31))
+                .addGap(31, 188, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,9 +91,7 @@ public class MenuLogin extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EntrySenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoginButton)
-                    .addComponent(AddUserCoringa))
+                .addComponent(LoginButton)
                 .addGap(22, 22, 22))
         );
 
@@ -207,20 +195,6 @@ public class MenuLogin extends javax.swing.JFrame {
        fetchLogin();
     }//GEN-LAST:event_LoginButtonMouseClicked
 
-    private void AddUserCoringaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddUserCoringaMouseClicked
-
-//       try{
-//       String inserir = "INSERT INTO Login (User, Password) VALUES (?,?)";
-//       pst = conec.prepareStatement(inserir);
-//       pst.setString(1, EntryUsuario.getText());
-//       pst.setString(2, EntrySenha.getText());
-//       pst.execute();
-//       JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-//       }catch(Exception e){
-//           JOptionPane.showMessageDialog(null, "Deu ruim patrao" + e);
-//       }
-    }//GEN-LAST:event_AddUserCoringaMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -258,7 +232,6 @@ public class MenuLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddUserCoringa;
     private javax.swing.JTextField EntrySenha;
     private javax.swing.JTextField EntryUsuario;
     private javax.swing.JButton LoginButton;

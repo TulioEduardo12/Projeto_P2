@@ -7,7 +7,7 @@ import java.sql.DriverManager;
  *
  * @author Matheus Dino
  */
-public class Config { //pegamos o código padrão da internet para conectar ao SQLite
+public interface Config { //pegamos o código padrão da internet para conectar ao SQLite
     
     Connection conec = null;
     
