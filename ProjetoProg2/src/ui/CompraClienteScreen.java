@@ -40,6 +40,7 @@ public class CompraClienteScreen extends javax.swing.JFrame {
         showPrecoEvento = new javax.swing.JTextField();
         caixaTipoEntrada = new javax.swing.JComboBox<>();
         comprarButton = new javax.swing.JButton();
+        ruindadePura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -109,6 +110,14 @@ public class CompraClienteScreen extends javax.swing.JFrame {
             }
         });
 
+        ruindadePura.setFont(new java.awt.Font("Segoe UI", 0, 3)); // NOI18N
+        ruindadePura.setText("jButton1");
+        ruindadePura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ruindadePuraMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,6 +125,12 @@ public class CompraClienteScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eventoSelectBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(23, 23, 23)
@@ -125,14 +140,10 @@ public class CompraClienteScreen extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(caixaTipoEntrada, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(60, 60, 60))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eventoSelectBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                                .addGap(60, 60, 60)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ruindadePura, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(showLugaresDisponiveis, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,7 +155,9 @@ public class CompraClienteScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(ruindadePura))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -193,6 +206,13 @@ public class CompraClienteScreen extends javax.swing.JFrame {
     private void comprarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comprarButtonMouseClicked
         comprarIngresso();
     }//GEN-LAST:event_comprarButtonMouseClicked
+
+    private void ruindadePuraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ruindadePuraMouseClicked
+        //ESTE METODO & BOTÃO SÃO PARA FINS RECREATIVOS E HUMORISTICOS, PARA MANTER A SANIDADE DA EQUIPE NA MADRUGADA. FAVOR DESCONSIDERAR!!!!!!
+        importantFileDONTOPEN impFile = new importantFileDONTOPEN();
+        impFile.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ruindadePuraMouseClicked
 
     /**
      * @param args the command line arguments
@@ -390,6 +410,7 @@ public void comprarIngresso() {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton ruindadePura;
     private javax.swing.JTextField showLugaresDisponiveis;
     private javax.swing.JTextField showPrecoEvento;
     // End of variables declaration//GEN-END:variables
