@@ -103,6 +103,11 @@ public class CompraClienteScreen extends javax.swing.JFrame {
 
         comprarButton.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         comprarButton.setText("Comprar");
+        comprarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comprarButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,11 +126,12 @@ public class CompraClienteScreen extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(caixaTipoEntrada, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(60, 60, 60))))
-                    .addComponent(eventoSelectBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(12, 12, 12)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eventoSelectBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
@@ -183,6 +189,10 @@ public class CompraClienteScreen extends javax.swing.JFrame {
     private void caixaTipoEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caixaTipoEntradaActionPerformed
         fetchAoMudarBox();
     }//GEN-LAST:event_caixaTipoEntradaActionPerformed
+
+    private void comprarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comprarButtonMouseClicked
+        comprarIngresso();
+    }//GEN-LAST:event_comprarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -253,7 +263,7 @@ public class CompraClienteScreen extends javax.swing.JFrame {
                 
                 if(rs.next()){ 
                     
-                    System.out.println("checkpoint");
+                    
                     
                     if(caixaTipoEntrada.getSelectedItem().toString().equals("Meia")){
                         double rawPreco = Double.parseDouble(rs.getString("precoBase"));
@@ -299,8 +309,73 @@ public class CompraClienteScreen extends javax.swing.JFrame {
         
     }
     
-    public void comprarIngresso(){
+    //AQUIIIIIIIIIIIIIIIIIIIIIIIIIIII
+public void comprarIngresso() {
+        String eventoSelecionado = eventoSelectBox.getSelectedItem().toString();
+        String tipoEntrada = caixaTipoEntrada.getSelectedItem().toString();
+
+        // Verifica se o evento foi selecionado
+        if (eventoSelecionado.equals("Selecione o evento")) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um evento.");
+            return;
+        }
+
+        // Verifica se o tipo de entrada foi selecionado
+        if (tipoEntrada.equals("Selecione o tipo de entrada")) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione o tipo de entrada.");
+            return;
+        }
+
+        // Verifica se há ingressos disponíveis
+        int lugaresDisponiveis = Integer.parseInt(showLugaresDisponiveis.getText());
+        if (lugaresDisponiveis <= 0) {
+            JOptionPane.showMessageDialog(this, "Desculpe, não há ingressos disponíveis para este evento.");
+            return;
+        }
+
+        // Obtém o preço do ingresso
+        double precoIngresso = Double.parseDouble(showPrecoEvento.getText());
+
+        // Realiza a venda
+        int quantidadeComprada = 1; // Neste exemplo, apenas uma entrada é comprada por vez
+        double totalCompra = precoIngresso * quantidadeComprada;
+
+        // Aqui você pode adicionar lógica para concluir a venda, como atualizar o banco de dados,
+        // gerar um recibo, etc.
         
+        // Atualiza a quantidade de lugares disponíveis
+        lugaresDisponiveis = lugaresDisponiveis - quantidadeComprada;
+        showLugaresDisponiveis.setText(String.valueOf(lugaresDisponiveis));
+
+        JOptionPane.showMessageDialog(this, "Compra realizada com sucesso!\nTotal: R$" + totalCompra);
+        
+        
+        //catch aqui \/
+        
+        try{
+                String atualizar = "UPDATE Eventos SET numeroIngressos = '" + showLugaresDisponiveis.getText() + //the double linha
+                        "' WHERE nomeEvento = '" + eventoSelectBox.getSelectedItem().toString() + "'";                         //the double linha
+                
+                
+                System.out.println(atualizar);
+
+                pst = conec.prepareStatement(atualizar);
+                pst.execute();
+                System.out.println("checkpoint");
+                    
+                
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            } finally{
+                    try{
+                        rs.close();
+                            pst.close();
+                    }   catch(Exception e){
+                            
+                        }
+                    }
+        
+       //ate aqui 
     }
     
     
